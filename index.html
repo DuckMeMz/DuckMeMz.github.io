@@ -3,40 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="docs/assets/css/styles.css">
+    <link rel="stylesheet" href="docs\assets\css\styles.css">
+    <title>Daniel Farnham | Portfolio</title>
 </head>
 <body>
     <header>
-        <h1>Default Name</h1>
-        <nav>
-            <a href="#">LinkedIn</a>
-            <a href="#">GitHub</a>
-            <a href="#">Instagram</a>
-            <a href="#">Resume</a>
-        </nav>
-    </header>
-
-    <div class="container">
-        <h2 class="section-title">Game Programming</h2>
-
-        <div class="project-grid">
-            <div class="project-card">
-                <img src="https://via.placeholder.com/300x200" alt="Project 1">
-                <div class="project-content">
-                    <h3 class="project-title">Project Title (Year)</h3>
-                    <p class="project-description">Default description for this project. This is a placeholder text for showcasing the layout.</p>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <img src="https://via.placeholder.com/300x200" alt="Project 2">
-                <div class="project-content">
-                    <h3 class="project-title">Project Title (Year)</h3>
-                    <p class="project-description">Default description for this project. This is a placeholder text for showcasing the layout.</p>
-                </div>
+        <div class="header-container">
+            <h1>Daniel Farnham</h1>
+            <div class="header-links">
+                <a href="https://www.linkedin.com" target="_blank">
+                    <img src="docs/assets/linkedin-app-white-icon.svg" alt="LinkedIn Logo">
+                </a>
+                <a href="https://www.github.com" target="_blank">
+                    <img src="docs\assets\github-mark-white.svg" alt="GitHub Logo">
+                </a>
+                <a href="#portfolio" class="portfolio-button">Resume</a>
             </div>
         </div>
-    </div>
+    </header>
+
+    <main>
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p>Hi! I'm Dan Farnham, a student at Northumbria University doing games computing. </p>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <img src="docs/assets/submarine.png" alt="A dark, ruined submarine" width="100%" height="auto">
+                    <h3>Sunken Depths</h3>
+                    <p>A brief description of the project and what it accomplishes.</p>
+                </div>
+                <div class="project">
+                    <video autoplay loop muted playsinline width="100%" height="auto">
+                        <source src="docs/assets/CSV Parsing Video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h3>CSV Parsing System</h3>
+                    <p>This assignment was to create  </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <h2>Education</h2>
+            <div class="education">
+                <div class="education-box">
+                    <h3>9 GCSEs</h3>
+                    <p>Ponteland High School</p>
+                    <p>2018 - 2021</p>
+                </div>
+                <div class="education-box">
+                    <h3>Diploma in Digital Media Production (Video Games)</h3>
+                    <p>Newcastle College</p>
+                    <p>2021 - 2023</p>
+                </div>
+                <div class="education-box">
+                    <h3>Degree in Games Computing</h3>
+                    <p>Northumbria University</p>
+                    <p>2023 - Present</p>
+                </div>
+    
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <h2>Experience</h2>
+            <p>[Your Job Title] - [Your Company]</p>
+            <p>Duration: [Start Date] - [End Date]</p>
+            <p>Brief description of your responsibilities and achievements.</p>
+        </section>
+    </main>
 </body>
 </html>
