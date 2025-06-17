@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="docs/assets/css/styles.css" />
+    <title>Daniel Farnham | Project</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        body {
+            font-family: "Poppins", serif;
+            font-weight: 400;
+            font-style: normal;
+            margin: 0;
+            padding: 0;
+            background-color: #1b1b1b;
+            color: #e0e0e0;
+        }
+        header {
+            background-color: #1b1b1b;
+            color: #e0e0e0;
+            padding: 16px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 40px;
+        }
+        .header-links {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+        .header-links a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 24px;
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            border-radius: 4px;
+        }
+        .header-links a:not(.portfolio-button):hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        .header-links a img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .header-links .portfolio-button {
+            border: 2px solid #ffffff;
+            padding: 4px 40px;
+            border-radius: 4px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .header-links .portfolio-button:hover {
+            background-color: #ffffff;
+            color: #121212;
+        }
+        .class-diag-button{
+            display: inline-block;
+            margin-bottom: -15px;
+            color: #b0bec5;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+        .class-diag-button:hover{
+            color:#ffffff ;
+            text-decoration: underline;
+        }
+        main {
+            padding: 32px 10%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 8px;
+            color: #b0bec5;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 6px 16px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .back-link:hover {
+            color:#ffffff ;
+        }
+        details{
+            color: #b0bec5;
+
+        }
+
+        h3{
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        /* Source referencing */
+        h4{
+            font-size:20px;
+            margin-top:-5px;
+            color:#b0bec5;
+        }
+        
+        p{
+            display: block;
+            margin-block-start: 16 px;
+            margin-block-end: 16 px;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Daniel Farnham</h1>
+            <div class="header-links">
+                <a href="https://www.linkedin.com/in/daniel-farnham-70100b265/" target="_blank">
+                    <img src="docs/assets/linkedin-app-white-icon.svg" alt="LinkedIn Logo">
+                </a>
+                <a href="https://github.com/DuckMeMz" target="_blank">
+                    <img src="docs/assets/github-mark-white.svg" alt="GitHub Logo">
+                </a>
+                <a href="https://drive.google.com/file/d/12ptyJqBauiJUpkNHk0LewvDObnaYB7-A/view?usp=sharing" class="portfolio-button" target="_blank">Resume</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        
+        <h2 style="color: #e0e0e0; font-size: 2rem; margin-bottom: 16px;">Warpbound</h2>
+        <p style="color: #b0bec5;; font-size: 15px; margin-top: -8px; margin-bottom: 12px;">
+            Mark - 85/100
+        </p>
+        <a href="index.html" class="back-link">← Back to Portfolio</a>
+        <video autoplay loop muted playsinline style="display: block;; width: 75%; border-radius: 8px; margin: 20px auto;">
+            <source src="docs/assets/WarpboundPage/WarpboundVideoNormal.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <h3> Introduction</h3>
+        <a href="https://drive.google.com/file/d/1Wa8vY5ho-f2eOyLEkibAxh_GCkdgCWga/view?usp=sharing" class="class-diag-button" target = "_blank"><h4>Class Diagram</h4></a>
+        <p>
+            Warpbound was a fun and challenging solo project, where I improved my architecture and object-oriented programming skills. One of my favorite features to build was the spritesheet animator - I focused on making it efficient and flexible so it could seamlessly integrate with the existing systems of Hornet.
+        </p>
+        <p>
+            The planet assets I sourced were provided as spritesheets, but Hornet's built-in animator expected individual image files for each frame. Animating at 60fps, even for a short animation, would've meant thousands of individual files, not to mention the cost of loading them onto SDL surfaces. 
+            To solve this, I created a dedicated animator component that hooks directly into game objects, allowing them to be animated with a single instance.
+
+        </p>
+        <p>
+            While I enjoyed working solo and learned a lot from the process, I've found that I prefer working in a team. Working with others brings different perspectives and approaches that often improve the final result, and it also helps me grow my teamwork and communication skills.
+        </p>
+        <h3> Spritesheet Animator Component</h3>
+        <h4> Animator.cpp | HtGraphics.cpp Line 93</h4>
+        <p>
+            The Animator component manages all animation timing, looping, caching and deletion, while seamlessly integrating with the GameObject class. Rather than overriding the default render function it feeds the frames back into the object's existing render function,
+             keeping rendering centralised and consistent across all game objects.
+        </p>
+        <p>
+            Memory efficiency was another key consideration, so I added a frame caching toggle. When enabled, all frames are stored after a single pass over the whole spritesheet, allowing fast access without reprocessing, useful for shorter looping animations. For longer animations, 
+            such as the background planets, caching can be disabled to reduce memory usage.
+        </p>
+
+        <video autoplay loop muted playsinline width="40%" height="auto" style="display: block; margin: 20px auto; border: 1px solid #1b1b1b; border-radius: 8px;"><source src="docs/assets/WarpboundPage/Planet Video.mp4"></video>
+        <h6 style="text-align: center; font-size: 16px; margin-top: -15px;">Spritesheets by <a href="https://deep-fold.itch.io/pixel-planet-generator" target="_blank" style="color: inherit; text-decoration: underline; font-size: 16px; margin-top: -15px;">Deep-Fold</a></h6>
+
+
+        <h3> GUI Shop System </h3>
+        <h4> Shop.cpp | ShopItem.cpp | Button.cpp </h4>
+        <p>
+            The Shop system acts as the controller for all shop interactions, managing a vector of ShopItem objects, an abstract base class. This design makes use of polymorphism to keep ShopItem management modular and easily expandable, while also handling entering and exiting as well as scene transitions.
+        </p> 
+        <p>
+            To stick to the scope of the project, I prioritised simplicity and fast iteration over a fully-fledged structure so I deliberately chose a shallow hierarchy. For future expansion, I would consider reworking it into a vertical hierarchy like the HUD system, allowing for more specific behaviours and improved scalability.
+        </p>
+        <video autoplay loop muted playsinline width="75%" height="auto" style="display: block; margin: 20px auto; border: 1px solid #1b1b1b; border-radius: 8px;"><source src="docs/assets/WarpboundPage/Shop Demo Video .mp4"></video>
+        <h3> HUD System </h3>
+        <h4> HUD.cpp & Derived</h4>
+        <p>
+            The HUD system is one of the components I'm most proud of in this project. It uses a vertical hierarchy with high cohesion and low coupling, and contains no gameplay logic. Its only responsibility is to receive, format and display data from the player. This separation keeps it reliable and easily scalable.
+        </p>
+        <p>
+            The HUD acts as a controller for a vector of abstract HUDElement objects, using polymorphism to manage and position them. In the future, I would extend the engine with an event system to completely remove the current weak dependency on the player.
+        </p>
+        <img src="docs/assets/WarpboundPage/HUD Class Diagram.png" alt="A class diagram of my HUD system" width="75%" height="auto" style="display: block; margin: 20px auto; border: 1px solid #1b1b1b; border-radius: 8px;">
+        <h6 style="text-align: center; font-size: 16px; margin-top: -15px;">HUD System UML Class Diagram</h6>
+            
+            
+   
+    </main>
+</body>
+</html>
