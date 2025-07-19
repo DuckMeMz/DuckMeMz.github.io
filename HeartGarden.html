@@ -229,7 +229,8 @@
       <div class="carousel-track">
         <div class="carousel-item">
           <iframe
-            src="https://www.youtube.com/embed/r2-3Hujk7bM?si=uM7ETghBCnVkV5k9"
+            
+            src="https://www.youtube.com/embed/QAuvAnSd4lE?si=22qwicf0KnZMj7mC"
             title="YouTube video player 1"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
@@ -238,7 +239,7 @@
         </div>
         <div class="carousel-item">
           <iframe
-            src="https://www.youtube.com/embed/QAuvAnSd4lE?si=22qwicf0KnZMj7mC"
+            src="https://www.youtube.com/embed/r2-3Hujk7bM?si=jrtzDA09oQGRICpl"
             title="YouTube video player 2"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
@@ -275,7 +276,32 @@
       </div>
       <button class="carousel-button next" aria-label="Next video">&#10095;</button>
     </div>
-  </main>
+
+    <h2>Summary</h2>
+  <p>
+    This was a consultancy group project where we were asked to expand and improve the <strong>Heart Garden</strong>, an interactive environment which reacts to the users heart data, created in Unreal Engine. I led both the technical development and client communication aspects of this project. On the technical side, I created several key environment features, including a dynamic water system, reactive foliage (grass, trees, flowers), and an interactive bell. I also took the lead in communicating with the client helping shape loose ideas into the final product.
+  </p>
+  <p>
+    <strong>Heart Garden</strong> connects to emWave Pro software via TCP, receiving real-time heart data from a sensor clipped to the user's earlobe. The software calculates a <i>coherence</i> value between 0 (stressed) and 1 (calm) -  this is designed for therapy sessions, where users can see their emotional state visualised in the changing environment. Both clients were very pleased with the result and even mentioned the potential for another academic paper based on this version of <strong>Heart Garden</strong>.
+  </p>
+  <h3>Water</h3>
+  <p>
+    
+    To create a smooth transition between calm and stressed states, I used dynamic material instances controlled by a Lerp node, with coherence as the alpha. As coherence drops, the water material gradually changes to be  darker, murkier and more agitated by changing parameters like opacity, normal intensity, distortion and panning speed.  When coherence rises, it changes back to a bright, clearer surface. This change is improved by the skybox, which becomes grey and cloudy at low coherence, and then changes to a clear blue sky with bright sunlight as coherence increases, shown in the background of the video below.
+    </p>
+
+    <video autoplay loop muted playsinline width="80%" height="auto" style="display: block; margin: 20px auto; border: 1px solid #1b1b1b; border-radius: 8px;"><source src="docs/assets/HeartGardenPage/Water Demo.mp4"></video>
+    <h3>Bell</h3>
+    <p>
+    To create a realistic swinging effect for the bell, I used a sine wave to simulate the oscillation and a lerp node to control it's amplitude, with coherence as the alpha. When coherence is high (> 0.7), the bell slows down and eventually stops. As coherence drops, the Lerp gets closer to the bell's max rotation, making the swing higher and more intense.
+      
+    This is much simpler than my original method of using an animation timeline and allows for easier control of amplitude and a gradual slow down at high coherence.
+    </p>    
+
+    <video autoplay loop muted playsinline width="80%" height="auto" style="display: block; margin: 20px auto; border: 1px solid #1b1b1b; border-radius: 8px;"><source src="docs/assets/HeartGardenPage/Bell Demo.mp4"></video>
+    
+  <img src="docs/assets/HeartGardenPage/Bell Swing Logic.png" style="width: 95%; height:auto; display: block; margin: 20px auto; border: 1px solid #1b1b1b; border-radius: 8px;">
+</main>
 
   <script>
     (function() {
@@ -287,8 +313,8 @@
 
       // Titles for each video slide
       const titles = [
-        "Heart Garden - Water",
         "Heart Garden - Meadow",
+        "Heart Garden - Water",
         "Heart Garden - Trees",
         "Heart Garden - Meadow 2",
         "Heart Garden - Bell"
@@ -318,5 +344,8 @@
       updateCarousel();
     })();
   </script>
+
+  
 </body>
+
 </html>

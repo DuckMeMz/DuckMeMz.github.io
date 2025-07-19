@@ -8,18 +8,21 @@
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
     body {
+      font-family: "Poppins", serif;
+      font-weight: 400;
+      font-style: normal;
       margin: 0;
       padding: 0;
-      font-family: 'Poppins', sans-serif;
       background-color: #1b1b1b;
       color: #e0e0e0;
     }
 
     header {
       background-color: #1b1b1b;
+      color: #e0e0e0;
       padding: 16px 0;
-      box-sizing: border-box;
       width: 100%;
+      box-sizing: border-box;
     }
 
     .header-container {
@@ -29,12 +32,11 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
+   }
 
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
-      color: #e0e0e0;
+      font-size: 40px;
     }
 
     .header-links {
@@ -44,16 +46,13 @@
     }
 
     .header-links a {
-      color: #e0e0e0;
-      text-decoration: none;
-      font-size: 1.5rem;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 24px;
-      height: 24px;
-      border-radius: 4px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    border-radius: 4px;
     }
 
     .header-links a:hover {
@@ -99,23 +98,24 @@
       color: #fff;
     }
 
-    h2 {
-      color: #e0e0e0;
-      font-size: 2rem;
-      margin-bottom: 16px;
-    }
-
     h3{
-            font-size: 28px;
-            margin-bottom: 5px;
+        font-size: 28px;
+        margin-bottom: 5px;
     }
 
+    /* Source referencing */
+    h4{
+        font-size:20px;
+        margin-top:-5px;
+        color:#b0bec5;
+    }
+    
     p{
-            display: block;
-            margin-block-start: 16 px;
-            margin-block-end: 16 px;
-            margin-inline-start: 0px;
-            margin-inline-end: 0px;
+        display: block;
+        margin-block-start: 16 px;
+        margin-block-end: 16 px;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
     }
 
     /* Carousel styles */
@@ -214,11 +214,14 @@
   </header>
 
   <main>
-    <h2>AR Navigation Guide </h2>
-     <p style="color: #b0bec5;; font-size: 15px; margin-top: -8px; margin-bottom: 12px;">
-            Mark - 84/100
-        </p>
-    <a href="index.html" class="back-link">← Back to Portfolio</a>
+    <h2>AR Navigation Guide</h2>
+    <p style="color: #b0bec5; font-size: 15px; margin-top: -8px; margin-bottom: 4px;">
+      Mark - 84/100
+    <div style="margin-bottom: 12px;">
+    </div>
+    <div>
+      <a href="index.html" class="back-link">← Back to Portfolio</a>
+    </div>
 
     <!-- Dynamic heading for carousel -->
     <h3 id="carousel-title" style="text-align:center; margin-bottom: 12px; font-size: 1.8rem; color: #f0f0f0;">
@@ -226,54 +229,27 @@
     </h3>
 
     <iframe
-            src="https://www.youtube.com/embed/WZ6WqVDH8V8?si=fs14G9H3jmrUMoRs"
-            title="YouTube video player 1"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen>
-          </iframe>
+      src="https://www.youtube.com/embed/WZ6WqVDH8V8?si=fs14G9H3jmrUMoRs"
+      title="YouTube video player 1"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
+
+          <h3>Summary</h3>
+        <p>
+            This was a 6 person group project where we designed and created a mobile Augmented Reality navigation app for students and visitors to find their way around unfamiliar university buildings. My role was to create the AR application, while others focused on reports and videos required for the assignment. One of my favourite features to implement was the QR code recentering system as I learnt a lot about image processing and using ZXing.Net to decode QR codes.
+        </p>
+        <p>
+            To build the environments, I used blueprints of the target building and then went in person to take precise measurements, like door positions, hallway widths and distances between key areas. I used this data to accurately recreate the rooms in Unity, making sure the scale matched the real-world building. Since the movements and position of the navigation pip matched the movements of the user holding the phone, a nav mesh could be used to allow the navigation line update in real time. Other approaches were considered but due to the lack of equipment or room access for 3D scanning, I decided this was the most optimal solution.
+        </p>
+        <p>
+            One of the biggest challenges was getting the app to stay aligned with the real world. During testing, I found that many devices, especially older ones, struggled with dim lighting and fast movements, which often threw off tracking. To solve this, I designed and implemented a system that would let users easily realign their device when needed. I tested various options, including NFC tags, but eventually settled on QR codes because they are simple, intuitive, and cheap. These can be placed around the building during events like open days or the first week of term, and when scanned, the app realigns the navigation pip back to the correct location and orientation.
+        </p>
+        <p>
+            I really enjoyed working on my part of this group project and learned a lot about creating and implementing AR apps. Working with new teammates, especially those from other disciplines, helped me develop my teamwork and communication skills.
+        </p>
   </main>
-
-  <script>
-    (function() {
-      const track = document.querySelector('.carousel-track');
-      const prevBtn = document.querySelector('.carousel-button.prev');
-      const nextBtn = document.querySelector('.carousel-button.next');
-      const items = Array.from(track.children);
-      const titleEl = document.getElementById('carousel-title');
-
-      // Titles for each video slide
-      const titles = [
-        "Heart Garden - Water",
-        "Heart Garden - Meadow",
-        "Heart Garden - Trees",
-        "Heart Garden - Meadow 2",
-        "Heart Garden - Bell"
-      ];
-
-      let currentIndex = 0;
-
-      function updateCarousel() {
-        const width = items[0].getBoundingClientRect().width;
-        track.style.transform = `translateX(-${currentIndex * width}px)`;
-        titleEl.textContent = titles[currentIndex];
-      }
-
-      prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex === 0) ? items.length - 1 : currentIndex - 1;
-        updateCarousel();
-      });
-
-      nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex === items.length - 1) ? 0 : currentIndex + 1;
-        updateCarousel();
-      });
-
-      window.addEventListener('resize', updateCarousel);
-
-      // Initialize heading and carousel position
-      updateCarousel();
-    })();
-  </script>
-</body>
+  </p>
+</body> 
 </html>
