@@ -97,7 +97,10 @@
     .back-link:hover {
       color: #fff;
     }
-
+    h2{
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
     h3{
         font-size: 28px;
         margin-bottom: 5px;
@@ -192,9 +195,57 @@
       }
     }
 
+    .project-summary {
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0 32px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.project-summary h2 {
+  margin: 0;
+  font-size: 28px;
+  color: #fff;
+}
+
+.project-summary h4 {
+  margin: 4px 0 12px 0;
+  font-size: 18px;
+  color: #b0bec5;
+}
+
+.project-summary .highlight {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: #e0e0e0;
+}
+
+.project-summary ul {
+  padding-left: 20px;
+  margin: 8px 0 0;
+}
+
+.project-summary p strong {
+  color: #fff; /* makes the label pop */
+}
+
+.project-summary .mark {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 10px;
+  background: #3c3c3c;
+  border-radius: 4px;
+  font-weight: 600;
+  color: #90caf9; /* light blue highlight */
+}
+
+
   </style>
 </head>
 <body>
+  
   <header>
     <div class="header-container">
       <h1>Daniel Farnham</h1>
@@ -214,16 +265,30 @@
   </header>
 
   <main>
-    <h2>AR Navigation Guide</h2>
-    <p style="color: #b0bec5; font-size: 15px; margin-top: -8px; margin-bottom: 4px;">
-      Mark - 84/100
-    <div style="margin-bottom: 12px;">
-    </div>
-    <div>
+     <div>
       <a href="index.html" class="back-link">← Back to Portfolio</a>
     </div>
-
-    <!-- Dynamic heading for carousel -->
+ <!-- Project Summary -->
+<div class="project-summary">
+  <h2>AR Navigation Guide</h2>
+  <h4>Role: AR Application Developer</h4>
+  <p class="highlight">
+    A mobile Augmented Reality navigation app designed to help students and visitors
+    find their way around unfamiliar university buildings.
+  </p>
+  <p>
+    <strong>Team Size:</strong> 6<br>
+    <strong>Time Spent on Project:</strong> 3 months<br>
+    <strong>Mark Awarded:</strong> 84/100
+  </p>
+  <p><strong>My Contributions:</strong></p>
+  <ul>
+    <li>Designed and developed the AR application in Unity</li>
+    <li>Implemented QR code recentering with ZXing.Net</li>
+    <li>Reconstructed building layouts from blueprints & measurements</li>
+    <li>Implemented AR pathfinding and navigation logic using NavMesh</li>
+  </ul>
+</div>
     <h3 id="carousel-title" style="text-align:center; margin-bottom: 12px; font-size: 1.8rem; color: #f0f0f0;">
       Demo Video
     </h3>
@@ -236,13 +301,15 @@
       allowfullscreen>
     </iframe>
 
-          <h3>Summary</h3>
+        <h3>Summary</h3>
         <p>
             This was a 6 person group project where we designed and created a mobile Augmented Reality navigation app for students and visitors to find their way around unfamiliar university buildings. My role was to create the AR application, while others focused on reports and videos required for the assignment. One of my favourite features to implement was the QR code recentering system as I learnt a lot about image processing and using ZXing.Net to decode QR codes.
         </p>
+        <h2>Building the Environment</h2>
         <p>
             To build the environments, I used blueprints of the target building and then went in person to take precise measurements, like door positions, hallway widths and distances between key areas. I used this data to accurately recreate the rooms in Unity, making sure the scale matched the real-world building. Since the movements and position of the navigation pip matched the movements of the user holding the phone, a nav mesh could be used to allow the navigation line update in real time. Other approaches were considered but due to the lack of equipment or room access for 3D scanning, I decided this was the most optimal solution.
         </p>
+        <h2>Challenges</h2>
         <p>
             One of the biggest challenges was getting the app to stay aligned with the real world. During testing, I found that many devices, especially older ones, struggled with dim lighting and fast movements, which often threw off tracking. To solve this, I designed and implemented a system that would let users easily realign their device when needed. I tested various options, including NFC tags, but eventually settled on QR codes because they are simple, intuitive, and cheap. These can be placed around the building during events like open days or the first week of term, and when scanned, the app realigns the navigation pip back to the correct location and orientation.
         </p>
