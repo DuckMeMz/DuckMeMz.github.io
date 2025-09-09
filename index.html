@@ -151,10 +151,11 @@
         }
         .education {
             display: grid;
-            grid-template-columns: repeat(2, minmax(100px, 1fr));
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 15px;
-            justify-content: center;
+            align-items: start;
         }
+
         .education-box {
             background: #1e1e1e;
             border-radius: 8px;
@@ -194,21 +195,45 @@
             font-size: 24px;
             color: #b0bec5;
         }
-        .tech-skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 10px;
-        }
-        .tech-tag {
-            font-size: 18px;
-            font-weight: bold;
-            padding: 8px 16px;
-            border-radius: 20px;
-            border: 2px solid #e0e0e0;
-            color: #e0e0e0;
-            background-color: transparent;
-        }
+
+      .education-box {
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.education-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Style <summary> arrow */
+.education-box details summary {
+  list-style: none; /* remove default bullet/arrow */
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+  padding-left: 18px;
+}
+
+/* Custom arrow */
+.education-box details summary::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: transform 0.3s, left 0.3s;
+}
+
+/* Rotate + move back arrow when open */
+.education-box details[open] summary::before {
+  transform: rotate(90deg);
+  left: -3px; /* nudges arrow back */
+}
+
     </style>
 </head>
 <body>
@@ -303,32 +328,44 @@
         </section>
         
 
-        <section id="education" class="section">
-            <h2>Education</h2>
-            <div class="education">
-                <div class="education-box">
-                    <h3>Newcastle College (2021-2023)</h3>
-                    <p>Extended Diploma in Digital Games Production</p>
-                </div>
-                <div class="education-box">
-                    <h3>Northumbria University (2023-Present)</h3>
-                    <p>BSc (Hons) Games Computing</p>
-                </div>
-            </div>
-        </section>
+      <section id="education" class="section">
+  <h2>Education</h2>
+  <div class="education">
 
-        <section id="experience" class="section">
-            <h2>Technical Skills</h2>
-            <div class="tech-skills">
-                <span class="tech-tag">C++</span>
-                <span class="tech-tag">C#</span>
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Pandas</span>
-                <span class="tech-tag">Unreal Engine</span>
-                <span class="tech-tag">Git</span>
-                <span class="tech-tag">SDL 2</span>
-            </div>
-        </section>
-    </main>
-</body>
-</html>
+    <div class="education-box">
+      <h3>Newcastle College (2021-2023)</h3>
+      <p>Extended Diploma in Digital Games Production</p>
+      
+      <details>
+  <summary>View Modules & Marks</summary>
+  <ul>
+    <li>Digital Games Production – Merit</li>
+    <li>Games Testing – Distinction</li>
+    <li>Pre Production Portfolio – Merit</li>
+    <li>3D Modelling – Merit</li>
+    <li>2D Animation – Pass</li>
+    <li>Concept Art for Computer Games – Merit</li>
+    <li>Media Campaigns – Distinction</li>
+  </ul>
+</details>
+    </div>
+
+    <div class="education-box">
+      <h3>Northumbria University (2023-Present)</h3>
+      <p>BSc (Hons) Games Computing</p>
+      
+      <details>
+        <summary>View Modules & Marks</summary>
+        <ul>
+          <li>Programming 1 – 100%</li>
+          <li>Programming 2 – 85%</li>
+          <li>Games Design – 80%</li>
+          <li>Human Computer Interaction – 80%</li>
+          <li>Computing Consultancy Project – 82%</li>
+          <li>Virtual and Augmented Reality – 84%</li>
+        </ul>
+      </details>
+    </div>
+
+  </div>
+</section>
