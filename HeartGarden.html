@@ -191,6 +191,52 @@
         height: 320px;
       }
     }
+    .project-summary {
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0 32px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.project-summary h2 {
+  margin: 0;
+  font-size: 28px;
+  color: #fff;
+}
+
+.project-summary h4 {
+  margin: 4px 0 12px 0;
+  font-size: 18px;
+  color: #b0bec5;
+}
+
+.project-summary .highlight {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: #e0e0e0;
+}
+
+.project-summary ul {
+  padding-left: 20px;
+  margin: 8px 0 0;
+}
+
+.project-summary p strong {
+  color: #fff; /* makes the label pop */
+}
+
+.project-summary .mark {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 10px;
+  background: #3c3c3c;
+  border-radius: 4px;
+  font-weight: 600;
+  color: #90caf9; /* light blue highlight */
+}
+
 
   </style>
 </head>
@@ -214,11 +260,28 @@
   </header>
 
   <main>
-    <h2>Heart Garden</h2>
-     <p style="color: #b0bec5;; font-size: 15px; margin-top: -8px; margin-bottom: 12px;">
-            Mark - 92/100
-        </p>
     <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+   <!-- Project Summary -->
+<div class="project-summary">
+  <h2>Heart Garden</h2>
+  <h4>Role: Environment & Technical Lead</h4>
+  <p class="highlight">
+    Created an immersive environment that dynamically responds to a user’s heart coherence, using real-time data to drive interactive visuals.
+  </p>
+  <p>
+    <strong>Team Size:</strong> 7<br>
+    <strong>Time Spent on Project:</strong> 3 months<br>
+    <strong>Mark Awarded:</strong> 88/100
+  </p>
+  <p><strong>My Contributions:</strong></p>
+  <ul>
+    <li>Designed and developed the environment in Unreal Engine</li>
+    <li>Used TCP to stream real-time heart data, dynamically controlling environment elements</li>
+    <li>Led client communication, translating initial concepts into a polished, final product</li>
+    <li>Managed the project end-to-end, incorporating client feedback throughout</li>
+  </ul>
+</div>
 
     <h3 id="carousel-title" style="text-align:center; margin-bottom: 12px; font-size: 1.8rem; color: #f0f0f0;">
       Video 1
@@ -279,7 +342,7 @@
 
     <h2>Summary</h2>
   <p>
-    This was a consultancy group project where we were asked to expand and improve the <strong>Heart Garden</strong>, an interactive environment which reacts to the users heart data, created in Unreal Engine. I led both the technical development and client communication aspects of this project. On the technical side, I created several key environment features, including a dynamic water system, reactive foliage (grass, trees, flowers), and an interactive bell. I also took the lead in communicating with the client helping shape loose ideas into the final product.
+    This was a consultancy group project where we were asked to expand and improve the <strong>Heart Garden</strong>, an interactive environment which reacts to the users heart data, created in Unreal Engine. I led both the technical development and client communication aspects of this project. On the technical side, I created several key environment features, including a dynamic water system, reactive foliage (grass, trees, flowers), and an interactive bell. On the communication side, I worked closely with the client converting loose ideas into a final, polished product, implementing their feedback throughout.
   </p>
   <p>
     <strong>Heart Garden</strong> connects to emWave Pro software via TCP, receiving real-time heart data from a sensor clipped to the user's earlobe. The software calculates a <i>coherence</i> value between 0 (stressed) and 1 (calm) -  this is designed for therapy sessions, where users can see their emotional state visualised in the changing environment. Both clients were very pleased with the result and even mentioned the potential for another academic paper based on this version of <strong>Heart Garden</strong>.
@@ -297,6 +360,7 @@
       
     This is much simpler than my original method of using an animation timeline and allows for easier control of amplitude and a gradual slow down at high coherence.
     </p>    
+    <!--Maybe put a section about the networking event-->
 
     <video autoplay loop muted playsinline width="80%" height="auto" style="display: block; margin: 20px auto; border: 1px solid #1b1b1b; border-radius: 8px;"><source src="docs/assets/HeartGardenPage/Bell Demo.mp4"></video>
     
