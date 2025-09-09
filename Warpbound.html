@@ -130,6 +130,51 @@
             margin-inline-start: 0px;
             margin-inline-end: 0px;
         }
+        .project-summary {
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0 32px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.project-summary h2 {
+  margin: 0;
+  font-size: 28px;
+  color: #fff;
+}
+
+.project-summary h4 {
+  margin: 4px 0 12px 0;
+  font-size: 18px;
+  color: #b0bec5;
+}
+
+.project-summary .highlight {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: #e0e0e0;
+}
+
+.project-summary ul {
+  padding-left: 20px;
+  margin: 8px 0 0;
+}
+
+.project-summary p strong {
+  color: #fff; /* makes the label pop */
+}
+
+.project-summary .mark {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 10px;
+  background: #3c3c3c;
+  border-radius: 4px;
+  font-weight: 600;
+  color: #90caf9; /* light blue highlight */
+}
 
     </style>
 </head>
@@ -150,15 +195,32 @@
     </header>
 
     <main>
-        
-        <h2 style="color: #e0e0e0; font-size: 2rem; margin-bottom: 16px;">Warpbound</h2>
-        <a href="https://github.com/DuckMeMz/Warpbound" target="_blank" style="color: #66ccff; font-weight: bold; text-decoration: underline; margin-bottom: 16px; display: inline-block;">
-    View GitHub Repository
-</a>
-        <p style="color: #b0bec5;; font-size: 15px; margin-top: -8px; margin-bottom: 12px;">
-            Mark - 85/100
-        </p>
+
+        <!-- Project Summary -->
+<div class="project-summary">
+  <h2>Warpbound</h2>
+  <a href="https://github.com/DuckMeMz/Warpbound" target="_blank" style="color: #66ccff; font-weight: bold; text-decoration: underline; margin-bottom: 16px; display: inline-block;">
+            View GitHub Repository
+        </a>
+  <h4>Role: Game Designer and Developer</h4>
+  <p class="highlight">
+    Warpbound is a solo project built on the in-house Hornet engine, where I developed key systems—including a modular HUD, GUI shop system, and efficient spritesheet animator.
+  </p>
+  <p>
+    <strong>Team Size:</strong> 1<br>
+    <strong>Time Spent on Project:</strong> 3 months<br>
+    <strong>Mark Awarded:</strong> 85/100
+  </p>
+  <p><strong>My Contributions:</strong></p>
+  <ul>
+    <li>Designed and implemented a Spritesheet Animator Component to efficiently animate spritesheets</li>
+    <li>Built a GUI Shop System using polymorphism, making it easy to add new items and extend functionality in the future </li>
+    <li>Developed a vertical-hierarchy HUD system, cleanly separating display from gameplay logic for maintainability and scalability</li>
+    <li>Extended the Hornet engine’s core classes, adding new functionality to the audio and graphics systems</li>
+  </ul>
+</div>
         <a href="index.html" class="back-link">← Back to Portfolio</a>
+
         <video autoplay loop muted playsinline style="display: block;; width: 75%; border-radius: 8px; margin: 20px auto;">
             <source src="docs/assets/WarpboundPage/WarpboundVideoNormal.mp4" type="video/mp4">
             Your browser does not support the video tag.
