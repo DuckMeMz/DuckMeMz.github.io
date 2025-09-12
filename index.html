@@ -97,7 +97,8 @@
             display: grid;
             grid-template-columns: repeat(2, minmax(300px, 1fr));
             gap: 15px;
-            justify-content: left;
+            justify-content: center;
+            
         }
         .project {
             background: #1e1e1e;
@@ -196,6 +197,10 @@
             color: #b0bec5;
         }
 
+        #about.section{
+            margin-top: -48px;
+        }
+
       .education-box {
   background: #1e1e1e;
   border-radius: 12px;
@@ -210,16 +215,14 @@
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* Style <summary> arrow */
 .education-box details summary {
-  list-style: none; /* remove default bullet/arrow */
+  list-style: none; 
   cursor: pointer;
   font-weight: 600;
   position: relative;
   padding-left: 18px;
 }
 
-/* Custom arrow */
 .education-box details summary::before {
   content: "›";
   position: absolute;
@@ -228,11 +231,35 @@
   transition: transform 0.3s, left 0.3s;
 }
 
-/* Rotate + move back arrow when open */
 .education-box details[open] summary::before {
   transform: rotate(90deg);
-  left: -3px; /* nudges arrow back */
+  left: -3px;
 }
+
+.single-projects {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.single-projects .project {
+    max-width: 600px;
+    width: 100%;
+}
+
+.single-projects .project h3 {
+    font-size: 28px;
+}
+
+.single-projects .project p {
+    font-size: 18px; 
+    line-height: 1.6;
+}
+
+
+
 
     </style>
 </head>
@@ -261,6 +288,23 @@
                 </p>
             </div>
         </section>
+
+        <section id = "work-experience" class="section">
+            <h2>Work Experience</h2>
+            <div class="single-projects">
+
+                <a href="Samsara.html" class="project" target="_self">
+                    <video autoplay loop muted playsinline width="100%" height="auto">
+                        <source src="docs/assets/Samsara/Tiryag Fight Thumbnail.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h3>Samsara<span class="caret">➜</span></h3>
+                    <p>I completed a 1 month Unreal Engine bootcamp, and was responsible for creating a new enemy for Samsara, a souls-like action RPG, inspired by Buddhist mythology. After completing the bootcamp I was hired back as a paid freelance programmer to continue work on my enemy.</p>
+                    <p><strong>Click To View Summary</strong></p>
+                </a>
+            </div>
+        </section>
+
 
         <section id="projects" class="section">
             <h2>Projects</h2>
@@ -318,7 +362,7 @@
                     <h3>AR Navigation Guide<span class="caret">➜</span></h3>
 
                     <p>
-                       This AR Navigation Guide was developed as part of my VR/AR module at Northumbria University. The app is created for mobile augmented reality designed to help new students and visitors navigate the campus easily and efficiency. This was created in Unity as part of VR/AR module at Northumbria University.
+                       This AR Navigation Guide was developed as part of my VR/AR module at Northumbria University. The app is created for mobile augmented reality designed to help new students and visitors navigate the campus easily and efficiently. This was created in Unity as part of VR/AR module at Northumbria University.
                     </p>
 
                     <p><strong>Click To View Project</strong></p>

@@ -112,8 +112,8 @@
 
     p{
             display: block;
-            margin-block-start: 16 px;
-            margin-block-end: 16 px;
+            margin-block-start: 16px;
+            margin-block-end: 16px;
             margin-inline-start: 0px;
             margin-inline-end: 0px;
     }
@@ -345,7 +345,7 @@
     This was a consultancy group project where we were asked to expand and improve the <strong>Heart Garden</strong>, an interactive environment which reacts to the users heart data, created in Unreal Engine. I led both the technical development and client communication aspects of this project. On the technical side, I created several key environment features, including a dynamic water system, reactive foliage (grass, trees, flowers), and an interactive bell. On the communication side, I worked closely with the client converting loose ideas into a final, polished product, implementing their feedback throughout.
   </p>
   <p>
-    Heart Garden connects to emWave Pro software via TCP, receiving real-time heart data from a sensor clipped to the user's earlobe. The software calculates a <i>coherence</i> value between 0 (stressed) and 1 (calm) -  this is designed for therapy sessions, where users can see their emotional state visualised in the changing environment. Both clients were very pleased with the result and even mentioned the potential for another academic paper based on this version of Heart Garden. Their original paper found <a href="https://doi.org/10.1080/10447318.2025.2504201" target="_blank" style="color: #66ccff; text-decoration: underline;">here</a> was written before the extension of Heart Garden.
+    Heart Garden connects to emWave Pro software via TCP, receiving real-time heart data from a sensor clipped to the user's earlobe. The software calculates a <i>coherence</i> value between 0 (stressed) and 1 (calm) -  this is designed for therapy sessions, where users can see their emotional state visualised in the changing environment. Both clients were very pleased with the result and even mentioned the potential for another academic paper based on this version of Heart Garden. Their original paper found <a href="https://doi.org/10.1080/10447318.2025.2504201" target="_blank" rel="noopener noreferrer" style="color: #66ccff; text-decoration: underline;">here</a> was written before the extension of Heart Garden.
   </p>
   <h3>Water</h3>
   <p>
@@ -356,7 +356,7 @@
     <video autoplay loop muted playsinline width="80%" height="auto" style="display: block; margin: 20px auto; border: 1px solid #1b1b1b; border-radius: 8px;"><source src="docs/assets/HeartGardenPage/Water Demo.mp4"></video>
     <h3>Bell</h3>
     <p>
-    To create a realistic swinging effect for the bell, I used a sine wave to simulate the oscillation and a lerp node to control it's amplitude, with coherence as the alpha. When coherence is high (> 0.7), the bell slows down and eventually stops. As coherence drops, the Lerp gets closer to the bell's max rotation, making the swing higher and more intense.
+    To create a realistic swinging effect for the bell, I used a sine wave to simulate the oscillation and a lerp node to control its amplitude, with coherence as the alpha. When coherence is high (> 0.7), the bell slows down and eventually stops. As coherence drops, the Lerp gets closer to the bell's max rotation, making the swing higher and more intense.
       
     This is much simpler than my original method of using an animation timeline and allows for easier control of amplitude and a gradual slow down at high coherence.
     </p>    

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daniel Farnham | Project</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+    body {
+        font-family: "Poppins", serif;
+        font-weight: 400;
+        font-style: normal;
+        margin: 0;
+        padding: 0;
+        background-color: #1b1b1b;
+        color: #e0e0e0;
+    }
+    header {
+        background-color: #1b1b1b;
+        color: #e0e0e0;
+        padding: 16px 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 40px;
+    }
+    .header-links {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+    }
+    .header-links a {
+        color: #e0e0e0;
+        text-decoration: none;
+        font-size: 24px;
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+        border-radius: 4px;
+    }
+    .header-links a:not(.portfolio-button):hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    .header-links a img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+    .header-links .portfolio-button {
+        border: 2px solid #ffffff;
+        padding: 4px 40px;
+        border-radius: 4px;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .header-links .portfolio-button:hover {
+        background-color: #ffffff;
+        color: #121212;
+    }
+
+    main {
+      padding: 32px 10%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: #b0bec5;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 6px 16px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .back-link:hover {
+      color: #ffffff;
+    }
+
+    /* Project summary block */
+    .project-summary {
+      background: #2a2a2a;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0 32px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .project-summary h2 {
+      margin: 0;
+      font-size: 28px;
+      color: #fff;
+    }
+
+    .project-summary h4 {
+      margin: 4px 0 12px 0;
+      font-size: 18px;
+      color: #b0bec5;
+    }
+
+    .project-summary p strong {
+      color: #fff;
+    }
+
+    .project-summary .highlight {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 12px;
+      color: #e0e0e0;
+    }
+
+    .project-summary .mark {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 4px 10px;
+      background: #3c3c3c;
+      border-radius: 4px;
+      font-weight: 600;
+      color: #90caf9;
+    }
+
+    h3 {
+      font-size: 28px;
+      margin-top: 32px;
+      margin-bottom: 8px;
+    }
+
+    h4 {
+      font-size: 20px;
+      margin-top: -5px;
+      color: #b0bec5;
+    }
+
+    h5 {
+      font-size: 20px;
+      margin-top: 15px;
+      color: #b0bec5;
+      text-align: center;
+    }
+
+    p {
+      margin: 16px 0;
+      line-height: 1.6;
+    }
+    iframe {
+      width: 100%;
+      height: 720px;
+      border: 0;
+      display: block;
+      border-radius: 8px;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <h1>Daniel Farnham</h1>
+      <div class="header-links">
+        <a href="https://www.linkedin.com/in/daniel-farnham-70100b265/" target="_blank">
+          <img src="docs/assets/linkedin-app-white-icon.svg" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/DuckMeMz" target="_blank">
+          <img src="docs/assets/github-mark-white.svg" alt="GitHub">
+        </a>
+        <a href="resume.pdf" class="portfolio-button" target="_blank">Resume</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+    <!-- Project Summary -->
+    <div class="project-summary">
+      <h2>Samsara</h2>
+      <h4>Role: Freelance Programmer</h4>
+      <p class="highlight">I was responsible for creating an enemy for <a href="https://store.steampowered.com/app/1683570/Samsara/" target="_blank" style="color: #66ccff; text-decoration: underline;">Samsara</a> a souls-like action RPG inspired by Buddhist mythology</p>
+      <p>
+        <strong>Dev Team Size:</strong> 6 <br>
+        <strong>Project Duration:</strong> Active <br>
+        <strong>Outcome:</strong> Invited back for paid freelance
+      </p>
+      <p><strong>Key Contributions:</strong></p>
+      <ul>
+        <li>Developed the Tiryag Charger enemy for Samsara, working from an existing design brief</li>
+        <li>Collaborated cross-discipline with designers, artists, and directors to translate design pitches into gameplay features and refine combat through playtesting.</li>
+        <li>Created custom C++ components and optimised AI, Niagara, and Blueprints, improving performance by ~15%.</li>
+        <li>Followed an Agile Scrum workflow and used software such as Hansoft, Miro, Perforce. After completion I was invited back for paid freelance work.</li>
+      </ul>
+    </div>
+    <h3>Demo Fight</h3>
+    
+    
+    <iframe
+      src="https://www.youtube.com/embed/3X2yw45nOrg?si=BXS8GoWgj7rtKcN3"
+      title="YouTube video player 5"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen>
+    </iframe>
+    <h5>Work In Progress</h5>
+    <h3>Summary</h3>
+    <p>During my Unreal Engine bootcamp, I worked on Samsara, a souls-like action RPG inspired by Buddhist mythology. My main task was to create a new enemy, the Tiryag Charger, a tank-type enemy designed to grab the player’s attention and open up opportunities for other Tiryags in the group to flank. Throughout the project I used industry-standard tools such as Perforce, Hansoft, and Miro, following an Agile Scrum workflow with daily stand-ups and sprint reviews.</p>
+
+    <h3>Key Takeaways</h3>
+    <ul>
+      <li>Learned to take feedback from playtests and mentors constructively, and apply it to improve quality and efficiency</li>
+      <li>Improved cross-discipline communication by keeping producers updated and asking designers clarifying questions</li>
+      <li>Keeping scope manageable during sprint planning and having the confidence to share work early instead of waiting until it felt “perfect”</li>
+      <li>Embracing quick iteration and prototyping rather than committing too early to one idea</li>
+      <li>Following coding conventions and documenting systems with comments and UML diagrams</li>
+    </ul>
+
+  </main>
+</body>
+</html>
