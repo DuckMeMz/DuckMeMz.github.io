@@ -35,6 +35,17 @@
             margin: 0;
             font-size: 40px;
         }
+
+         header h1 a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        header h1 a:hover {
+            color: #b0bec5;
+        }
+
         .header-links {
             display: flex;
             gap: 16px;
@@ -181,7 +192,7 @@
 <body>
     <header>
         <div class="header-container">
-            <h1>Daniel Farnham</h1>
+           <h1><a href="index.html">Daniel Farnham</a></h1>
             <div class="header-links">
                 <a href="https://www.linkedin.com/in/daniel-farnham-70100b265/" target="_blank">
                     <img src="docs/assets/linkedin-app-white-icon.svg" alt="LinkedIn Logo">
@@ -189,7 +200,7 @@
                 <a href="https://github.com/DuckMeMz" target="_blank">
                     <img src="docs/assets/github-mark-white.svg" alt="GitHub Logo">
                 </a>
-                <a href="https://drive.google.com/file/d/12ptyJqBauiJUpkNHk0LewvDObnaYB7-A/view?usp=sharing" class="portfolio-button" target="_blank">Resume</a>
+                <a href="Resume.html" class="portfolio-button" target="_self">Resume</a>
             </div>
         </div>
     </header>

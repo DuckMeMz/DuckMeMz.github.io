@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daniel Farnham | Portfolio</title>
+  <link rel="stylesheet" href="docs/assets/css/styles.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+    body {
+      font-family: "Poppins", serif;
+      margin: 0;
+      padding: 0;
+      background-color: #1b1b1b;
+      color: #e0e0e0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #1b1b1b;
+      color: #e0e0e0;
+      padding: 16px 0;
+      width: 100%;
+      box-sizing: border-box;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 40px;
+    }
+
+    header h1 a {
+      color: #e0e0e0;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    header h1 a:hover {
+      color: #b0bec5;
+    }
+
+    .header-links {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .header-links a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-size: 24px;
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      border-radius: 4px;
+    }
+
+    .header-links a:not(.portfolio-button):hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .header-links a img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .header-links .portfolio-button {
+      border: 2px solid #ffffff;
+      padding: 4px 40px;
+      border-radius: 4px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .header-links .portfolio-button:hover {
+      background-color: #ffffff;
+      color: #121212;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 0;
+      background-color: #1b1b1b;
+    }
+
+    .pdf-wrapper {
+      width: min(800px, 90vw);
+      background: #1b1b1b;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    iframe {
+      width: 100%;
+      height: calc(100vh - 160px);
+      border: none;
+    }
+
+    @media (max-width: 600px) {
+      .pdf-wrapper {
+        width: 95vw;
+      }
+      iframe {
+        height: 80vh;
+      }
+    }
+
+    .download-button {
+        border: 2px solid #ffffff;
+        padding: 4px 40px;
+        border-radius: 4px;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .download-button:hover {
+        background-color: #ffffff;
+        color: #121212;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <h1><a href="index.html">Daniel Farnham</a></h1>
+      <div class="header-links">
+        <a href="https://www.linkedin.com/in/daniel-farnham-70100b265/" target="_blank">
+          <img src="docs/assets/linkedin-app-white-icon.svg" alt="LinkedIn Logo">
+        </a>
+        <a href="https://github.com/DuckMeMz" target="_blank">
+          <img src="docs/assets/github-mark-white.svg" alt="GitHub Logo">
+        </a>
+        <a href="Resume.html" class="portfolio-button" target="_self">Resume</a>
+      </div>
+    </div>
+  </header>
+
+ <main>
+
+  <div class="content">
+    <a href="docs/assets/CV_Daniel_Farnham.pdf" class="download-button">Download Resume</a>
+    <div class="pdf-wrapper">
+      <iframe src="docs/assets/CV_Daniel_Farnham.pdf#toolbar=0&view=FitH"></iframe>
+    </div>
+  </div>
+</main>
+</body>
+</html>

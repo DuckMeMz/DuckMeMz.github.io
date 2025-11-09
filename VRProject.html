@@ -39,6 +39,16 @@
       font-size: 40px;
     }
 
+    header h1 a {
+      color: #e0e0e0;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    header h1 a:hover {
+      color: #b0bec5
+    }
+
     .header-links {
       display: flex;
       gap: 16px;
@@ -248,7 +258,7 @@
   
   <header>
     <div class="header-container">
-      <h1>Daniel Farnham</h1>
+      <h1><a href="index.html">Daniel Farnham</a></h1>
       <nav class="header-links">
         <a href="https://www.linkedin.com/in/daniel-farnham-70100b265/" target="_blank" aria-label="LinkedIn">
           <img src="docs/assets/linkedin-app-white-icon.svg" alt="LinkedIn Logo" style="width: 24px; height: 24px;" />
@@ -256,8 +266,8 @@
         <a href="https://github.com/DuckMeMz" target="_blank" aria-label="GitHub">
           <img src="docs/assets/github-mark-white.svg" alt="GitHub Logo" style="width: 24px; height: 24px;" />
         </a>
-        <a href="https://drive.google.com/file/d/12ptyJqBauiJUpkNHk0LewvDObnaYB7-A/view?usp=sharing" 
-           class="portfolio-button" target="_blank" rel="noopener noreferrer">
+        <a href="Resume.html" 
+           class="portfolio-button" target="_self">
           Resume
         </a>
       </nav>
