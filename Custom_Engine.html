@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daniel Farnham | Project</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #1b1b1b;
+      color: #e0e0e0;
+    }
+
+    header {
+      background-color: #1b1b1b;
+      padding: 16px 0;
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header h1 a {
+      color: #e0e0e0;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    header h1 a:hover {
+      color: #b0bec5;
+    }
+
+    .header-links {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .header-links a {
+      color: #e0e0e0;
+      text-decoration: none;
+      font-size: 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .header-links a:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .header-links a.portfolio-button {
+      border: 2px solid #fff;
+      padding: 4px 32px;
+      font-size: 1rem;
+      font-weight: 700;
+      background: transparent;
+      color: #fff;
+      width: auto;
+      height: 32px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .header-links a.portfolio-button:hover {
+      background-color: #fff;
+      color: #121212;
+    }
+
+    main {
+        padding: 32px 10%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: #b0bec5;
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+
+    .back-link:hover {
+      color: #fff;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.6rem;
+      margin-top: 32px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin: 16px 0;
+      line-height: 1.6;
+    }
+
+     iframe {
+      width: 100%;
+      height: 720px;
+      border: 0;
+      display: block;
+      border-radius: 8px;
+      background: #000;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-container">
+    <h1><a href="index.html">Daniel Farnham</a></h1>
+    <nav class="header-links">
+      <a href="https://www.linkedin.com/in/daniel-farnham-70100b265/" target="_blank">
+        <img src="docs/assets/linkedin-app-white-icon.svg" alt="LinkedIn" style="width:24px;height:24px;">
+      </a>
+      <a href="https://github.com/DuckMeMz" target="_blank">
+        <img src="docs/assets/github-mark-white.svg" alt="GitHub" style="width:24px;height:24px;">
+      </a>
+      <a href="Resume.html" class="portfolio-button">Resume</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+ <h2>Custom C++ Component-Based Game Engine (raylib)</h2>
+
+<p>
+This project explores engine architecture and systems commonly abstracted by modern game engines. I wanted to understand how component systems, rendering pipelines, data flow, and asset ownership actually function beneath the surface.
+</p>
+
+<p>
+Built on top of raylib as a lightweight rendering and input layer, the focus was on designing a component-based entity system and a centralised rendering pipeline with material and shader management - rather than low-level graphics API boilerplate.
+</p>
+The project was developed as both an engine and a small gameplay prototype, ensuring systems were tested against real gameplay rather than developed in a vacuum.
+</p>
+
+<!-- Demo Video -->
+<h2>Demo</h2>
+<iframe
+  src="https://www.youtube.com/embed/xIFXy0o-wYs?si=cJac4_6EDIeOBlnV"
+  title="YouTube video player 5"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen>
+</iframe>
+
+<h2>Future Direction</h2>
+
+<p>
+The engine was built around swarm-style gameplay involving large numbers of dynamic enemies and lights. The current architecture provides a solid foundation for exploring more advanced, performance-focused systems, with future work exploring GPU-driven approaches to gameplay simulation and rendering.
+</p>
+
+<ul>
+  <li><strong>OpenCL-based GPU compute</strong> – Offloading enemy and projectile logic to the GPU taking advantage of parallel processing.</li>
+  <li><strong>Deferred rendering</strong> – Investigating a deferred pipeline to better support high light counts and more complex scenes.</li>
+  <li><strong>Hardware instancing</strong> – Reducing draw calls for repeated meshes to improve scalability.</li>
+  <li><strong>Frustum culling</strong> – Adding view-based render culling to reduce unnecessary draw calls.</li>
+</ul>
+
+
+
+</main>
+
+</body>
+</html>
