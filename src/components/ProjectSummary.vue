@@ -39,6 +39,10 @@
         {{ link.label }}
       </a>
     </div>
+
+    <p v-if="project.supportingNote" class="summary-note">
+      {{ project.supportingNote }}
+    </p>
   </section>
 </template>
 

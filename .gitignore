@@ -1,5 +1,7 @@
 node_modules/
 dist/
 .vite/
+.vs/
+docs/assets/PitWall/PitWall Demo - v0.1.0.mp4
 npm-debug.log*
 

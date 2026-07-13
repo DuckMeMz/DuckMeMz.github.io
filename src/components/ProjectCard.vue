@@ -17,7 +17,13 @@
       <ul class="tag-list" aria-label="Tools used">
         <li v-for="tool in project.tools.slice(0, 6)" :key="tool">{{ tool }}</li>
       </ul>
-      <div v-if="project.cardActions?.length" class="card-actions">
+      <div class="card-actions">
+        <RouterLink
+          class="button button-small button-primary"
+          :to="`/project/${project.slug}`"
+        >
+          View project
+        </RouterLink>
         <RouterLink
           v-for="action in internalActions"
           :key="action.label"
@@ -37,13 +43,6 @@
           {{ action.label }}
         </a>
       </div>
-      <RouterLink
-        v-else
-        class="button button-small button-primary project-card-action"
-        :to="`/project/${project.slug}`"
-      >
-        View project
-      </RouterLink>
     </div>
   </article>
 </template>

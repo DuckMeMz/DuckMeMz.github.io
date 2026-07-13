@@ -10,7 +10,7 @@ export const projectGroups = [
   {
     id: "selected-projects",
     eyebrow: "Selected projects",
-    title: "Additional Projects",
+    title: "Additional projects",
     description:
       "Client-facing Unreal work and a low-level 3D renderer on PS4.",
     slugs: ["heart-garden", "low-level-3d-renderer"],
@@ -46,14 +46,13 @@ export const projects = [
       },
     ],
     cardActions: [
-      { label: "View project", to: "/project/samsara" },
       {
         label: "Steam page",
         href: "https://store.steampowered.com/app/1683570/Samsara/",
       },
     ],
     facts: [
-      { label: "Team", value: "6 developers" },
+      { label: "Team", value: "6-person multidisciplinary team" },
       { label: "Project", value: "Shipped Unreal Engine title" },
       { label: "Outcome", value: "Hired for paid freelance work" },
     ],
@@ -73,14 +72,13 @@ export const projects = [
         ]
       },
        {
-        title: "What I worked on",
+        title: "What I Worked On",
         type: "bullets",
         items: [
           "Developed the enemy from a design brief to a playable combat feature.",
           "Built custom C++ components and connected them with Blueprint controls for designers.",
           "Developed and extended the enemy’s combat behaviour, including its bull-charge ability.",
           "Tuned its attacks, movement and behaviour through playtesting and feedback.",
-          "Improved the AI, Blueprint and Niagara implementation to improve performance.",
           "Worked with designers, artists and directors throughout development."
         ],
       },
@@ -88,7 +86,7 @@ export const projects = [
         title: "Technical Approach",
         body: [
           "I kept the behaviour modular so individual abilities and values could be adjusted without having to rewrite the full enemy.",
-          "Gameplay logic that benefited from structure and reuse was handled in C++, while values that needed frequent tuning were exposed to Blueprint. This allowed designers to adjust behaviour quickly during playtests without changing the underlying code.",
+          "Gameplay logic that benefited from structure and reuse was handled in C++, while values that needed frequent changing were exposed to Blueprint. This allowed designers to adjust behaviour quickly during playtests without changing the underlying code.",
           "I also had to fit the enemy into systems that were already being used by the project, rather than treating it as a standalone prototype. That meant working around existing combat logic, animations, visual effects and design expectations."
         ],
       },
@@ -96,7 +94,7 @@ export const projects = [
         title: "What I Learned",
         body: [
           "This was my first experience working inside a larger Unreal Engine production environment.",
-          "I became more confident working within an existing codebase, using Perforce and sprint-based workflows, and presenting unfinished work for review. I also learned how important it is to balance technical structure with the need for designers to iterate quickly.",
+          "I became more confident working within an existing codebase, using Perforce, sprint-based workflows, and presenting unfinished work for review. I also learned how important it is to balance system complexity with the need for designers to iterate quickly.",
           "Being hired for paid freelance work after the bootcamp gave me confidence that both the feature and the way I worked with the team were valuable."
         ],
       },
@@ -116,11 +114,15 @@ export const projects = [
     "A work-in-progress Windows desktop application that turns OpenF1 data into an interactive Formula 1 replay. The core replay flow is working, including timeline playback, circuit mapping, driver tracking, timing, and telemetry.",
 
   cardMedia: {
-    type: "panel",
-    kicker: "Work in progress",
-    title: "PitWall",
-    meta: "C# / WPF / OpenF1 API",
-    label: "PitWall C# WPF Formula 1 replay tool",
+    type: "video",
+    src: "docs/assets/PitWall/PitWall Demo - v0.1.0.web.mp4",
+    label: "PitWall Formula 1 replay demo",
+  },
+
+  detailMedia: {
+    type: "youtube",
+    src: "https://www.youtube.com/embed/SckFAXA8TCw",
+    label: "PitWall Formula 1 replay demo",
   },
 
   links: [
@@ -128,9 +130,12 @@ export const projects = [
       label: "GitHub",
       href: "https://github.com/DuckMeMz/PitWall",
     },
+  ],
+
+  cardActions: [
     {
-      label: "Release",
-      href: "https://github.com/DuckMeMz/PitWall/releases",
+      label: "GitHub",
+      href: "https://github.com/DuckMeMz/PitWall",
     },
   ],
 
@@ -172,29 +177,27 @@ export const projects = [
       title: "The Interesting Part",
       body: [
         "OpenF1 does not provide a ready-made replay feed. Location, car telemetry, positions, intervals, and laps all arrive separately, use different timestamps, and update at different rates. PitWall downloads those feeds, groups them by driver, and turns them into one replay model.",
-        "At each point on the playback timeline, the app finds the most recent useful sample for each type of data. It interpolates values such as location, speed, throttle, brake, RPM, and timing gaps where it is safe to do so, while keeping discrete values like gear, DRS state, position, and lap information tied to recorded updates.",
+        "At each point on the playback timeline, the app finds the most recent useful sample for each type of data. It interpolates values such as location, speed, throttle, brake, RPM, and timing gaps where it is safe to do so, while keeping discrete values like gear, DRS state, position, and lap information tied to updates.",
       ],
     },
     {
       title: "Technical Approach",
       body: [
-        "The application is written in C# with WPF and MVVM. The UI, playback controls, map, timing table, and telemetry panel are kept separate from the API and replay logic, making the project easier to extend.",
-        "I built the API layer to cope with imperfect real-world data: missing optional streams, values that arrive in inconsistent JSON formats, unknown enum values, duplicate timestamps, and samples that arrive out of order. A Polly resilience pipeline spaces out requests and retries rate-limit responses with exponential backoff.",
-        "Replay updates use efficient lookups rather than scanning every driver's data from the beginning on every frame. The UI is updated from the current replay state, with a generated map scaled to fit the available display area.",
-      ],
+        "The application is written in C# with WPF and MVVM. The UI, playback controls, map, timing table, and telemetry panel are kept separate from the API and replay logic, making the project easier to expand.",
+        "I built the API layer to cope with imperfect real-world data: missing optional streams, values that arrive in inconsistent JSON formats, unknown enum values, duplicate timestamps, and samples that arrive out of order. A Polly resilience pipeline spaces out requests and retries rate-limit responses with exponential backoff."      ],
     },
     {
       title: "Current State",
       body: [
         "The main replay experience is implemented. At the moment, PitWall downloads and processes a full session before playback starts, so larger sessions can take time to load and stay in memory while open.",
-        "My next priorities are buffered loading, SQLite caching, and a session browser so users can load races without using raw OpenF1 session keys. I also plan to add race-control messages, synchronised team radio, and further UI and error-handling improvements.",
+        "My next priorities are buffered loading, SQLite caching, and a session browser so users can load races without using raw OpenF1 session keys. I also plan to add race-control messages, synchronised team radio, and further UI improvements.",
       ],
     },
     {
       title: "What I Learned",
       body: [
         "PitWall has given me experience building and shipping a complete desktop application outside a game-engine environment: asynchronous API work, data modelling, custom JSON handling, WPF binding, MVVM, playback logic, packaging, and automated releases.",
-        "The biggest lesson so far was learning not to assume API data would behave consistantly. Each time I handled one missing or unexpected value, another edge case appeared somewhere elese. Building PitWall taught me to validate the data at every stage and decide explicitly how to handle values that are missing, duplicated or late.",
+        "The biggest lesson so far was learning not to assume API data would behave consistently. Each time I handled one missing or unexpected value, another edge case appeared somewhere else. Building PitWall taught me to validate the data at every stage and explicitly decide how to handle values that are missing, duplicated or late.",
       ],
     },
   ],
@@ -342,65 +345,78 @@ export const projects = [
     ],
   },
   {
-    slug: "low-level-3d-renderer",
-    title: "Low-Level 3D Renderer",
-    subtitle: "PS4 Dev Kit / C++",
-    category: "Graphics Programming",
-    role: "C++ Graphics Programmer",
-    summary:
-      "A low-level rendering project built in C++ on PS4 dev kit hardware.",
-    cardSummary:
-      "A low-level C++ rendering project developed on PS4 development hardware. I implemented Phong lighting, texture and mesh loading, while debugging rendering issues and analysing performance.",
-    cardMedia: {
-      type: "video",
-      src: "docs/assets/3D Renderer Video.mp4",
-      poster: "docs/assets/posters/renderer.png",
-      label: "Low-Level 3D Renderer PS4 Dev Kit C++ demo video",
-    },
-    detailMedia: {
-      type: "panel",
-      kicker: "Rendering project",
-      title: "Low-Level 3D Renderer",
-      meta: "PS4 Dev Kit / C++",
-      label: "Low-Level 3D Renderer PS4 Dev Kit C++ project",
-    },
-    links: [],
-    facts: [
-      { label: "Platform", value: "PS4 Dev Kit" },
-      { label: "Language", value: "C++" },
-      { label: "Focus", value: "Low-level graphics" },
-    ],
-    tools: ["C++", "PS4 Dev Kit", "Rendering", "Graphics programming"],
-    sections: [
-      {
-        title: "What I owned",
-        type: "bullets",
-        items: [
-          "Worked closer to platform-level rendering constraints than a typical engine workflow.",
-          "Built understanding of graphics fundamentals, frame flow, and low-level C++ rendering decisions.",
-          "Applied C++ foundations in a performance-aware graphics context.",
-        ],
-      },
-      {
-        title: "What I built",
-        body: [
-          "A low-level 3D rendering project focused on understanding how graphics work beneath higher-level engine abstractions.",
-        ],
-      },
-      {
-        title: "Technical decisions",
-        body: [
-          "The project emphasised C++ rendering fundamentals, platform constraints, and the practical cost of graphics decisions.",
-        ],
-      },
-      {
-        title: "What I learned",
-        body: [
-          "This project strengthened my low-level C++ understanding and gave me more context for the rendering systems used by modern game engines.",
-        ],
-      },
-    ],
+  slug: "low-level-3d-renderer",
+  title: "Low-Level 3D Renderer",
+  subtitle: "PS4 Dev Kit / C++",
+  category: "Graphics Programming",
+  role: "C++ Graphics Programmer",
+
+  summary:
+    "A low-level C++ graphics project developed on PS4 development hardware, focused on building 3D rendering features without a game engine.",
+
+  supportingNote: "PS4 source code cannot be shared due to NDA",
+
+  cardSummary:
+    "A low-level C++ rendering project developed on PS4 development hardware. I implemented Phong lighting, texture and mesh loading, while debugging rendering issues and analysing performance.",
+
+  cardMedia: {
+    type: "video",
+    src: "docs/assets/3D Renderer Video.mp4",
+    poster: "docs/assets/posters/renderer.png",
+    label: "Public C++ lighting demonstration",
   },
+
+  detailMedia: {
+    type: "panel",
+    kicker: "Graphics Programming",
+    title: "Low-Level 3D Renderer",
+    meta: "PS4 Dev Kit / C++",
+    label: "Low-Level 3D Renderer PS4 Dev Kit C++ project",
+  },
+
+  links: [],
+
+  facts: [
+    { label: "Project", value: "University graphics project" },
+    { label: "Platform", value: "PS4 Dev Kit" },
+    { label: "Focus", value: "Low-level 3D rendering" },
+  ],
+
+  tools: [
+    "C++",
+    "PS4 Dev Kit",
+    "Phong Lighting",
+    "Shader Programming",
+    "Performance Analysis",
+  ],
+
+  sections: [
+    {
+      title: "Overview",
+      body: [
+        "I built a small 3D renderer on PS4 development hardware, working directly with the graphics pipeline rather than through a game engine. It loaded textured meshes, supported multiple cameras, and used Phong lighting to render a 3D scene.",
+      ],
+    },
+    {
+      title: "What I Built",
+      type: "bullets",
+      items: [
+        "Loaded mesh and texture data for rendering.",
+        "Set up shaders, vertex and index buffers, and transformation data.",
+        "Implemented Phong lighting.",
+        "Added support for multiple camera views.",
+        "Used platform debugging and performance tools to investigate rendering issues.",
+      ],
+    },
+    {
+      title: "What I Learned",
+      body: [
+        "Before this project, I understood meshes mostly as assets that an engine loaded for me. Working at a lower level showed me how vertex and index data make up a mesh, how that data is transferred into GPU buffers, and how shaders and draw calls turn it into a rendered frame.",
+        "It also made me more methodical when debugging graphics problems, because I had to trace issues through the mesh data, buffers, shaders, and rendering state myself.",
+      ],
+    },
+  ],
+},
   {
   slug: "heart-garden",
   title: "Heart Garden",
@@ -409,7 +425,7 @@ export const projects = [
   role: "Technical Lead / Environment Programmer",
 
   summary:
-    "Heart Garden is an Unreal Engine environment that responds to live heart-coherence data. As the values change, the water, foliage, lighting, and bell shift between calmer and more unsettled states.",
+    "Heart Garden is an Unreal Engine environment that responds to live heart-coherence data. As the values change, reactive systems such as water, foliage, lighting, and bell shift between calmer and more unsettled states.",
 
   cardSummary:
     "A client-facing Unreal Engine environment driven by live heart-coherence data. I led client communication and built reactive systems for the water, foliage, lighting, bell and other environmental elements.",
@@ -481,7 +497,7 @@ export const projects = [
       body: [
         "Heart Garden was an extension and proof of concept based on an early environment created by the clients. Our goal was to expand it into a more complete experience that used live coherence values from emWave Pro (heart sensor) to change the environment in real time.",
         "Higher coherence moves the world towards a calmer state, while lower coherence makes the water, foliage, lighting, bell and other environmental elements more unsettled.",
-        "I took primary responsibility for the reactive environment systems and handled client communication throughout the project. This meant turning broad ideas about relaxation and atmosphere into behaviours that we could build, test, and refine.",
+        "I took primary responsibility for the reactive environment systems and handled client communication throughout the project. This meant turning broad ideas about relaxation and atmosphere into concrete systems that we could build, test, and refine.",
       ],
     },
     {
@@ -489,7 +505,7 @@ export const projects = [
       type: "bullets",
       items: [
         "Led the technical environment work and client communication throughout the project.",
-        "Received live emWave Pro data over TCP and mapped coherence values to environmental responses.",
+        "Received live emWave Pro data over TCP and mapped coherence values to environmental systems.",
         "Built reactive systems for the water, foliage, lighting, trees, bell, and other environmental elements.",
         "Worked with the client to turn broad ideas into features the team could test and demonstrate.",
       ],

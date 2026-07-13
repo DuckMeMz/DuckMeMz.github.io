@@ -5,20 +5,20 @@ export const education = [
     award: "First-Class BSc (Hons) Games Computing",
     link: "https://www.northumbria.ac.uk/study-at-northumbria/courses/bsc-hons-games-computing-uusgco1/",
     highlights: [
-      "Gameplay and software programming",
-      "Client-facing Unreal Engine project work",
-      "Virtual and augmented reality development",
+      "Built gameplay, graphics, AR, and software projects using C++, C#, Unreal Engine, and Unity.",
+      "Worked on client projects that involved turning broad ideas into working features.",
+      "Developed a stronger understanding of gameplay systems, real-time applications, and working as part of a development team.",
     ],
   },
   {
     institution: "Newcastle College",
     dates: "2021 - 2023",
-    award: "Extended Diploma in Digital Games Production",
+    award: "BTEC Extended Diploma in Creative Digital Media (Games) - DDM",
     link: "https://www.ncl-coll.ac.uk/courses/775001751351700/games-development-level-3",
     highlights: [
-      "Games production foundation",
-      "Testing, pre-production, and 3D modelling",
-      "Media campaigns and concept development",
+      "Built a wide foundation across game design, development, 3D art, and production.",
+      "Worked on practical projects across QA, pre-production, asset creation, and pitching.",
+      "Helped me narrow my focus towards programming.",
     ],
   },
 ];
