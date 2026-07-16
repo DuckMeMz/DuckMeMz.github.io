@@ -13,7 +13,7 @@ export const projectGroups = [
     title: "Additional projects",
     description:
       "Client-facing Unreal work and a low-level 3D renderer on PS4.",
-    slugs: ["heart-garden", "low-level-3d-renderer"],
+    slugs: ["heart-garden", "low-level-3d-renderer", "ar-navigation-guide"],
   },
 ];
 
@@ -528,65 +528,89 @@ export const projects = [
   ],
 },
   {
-    slug: "ar-navigation-guide",
-    title: "AR Navigation Guide",
-    subtitle: "Mobile campus navigation",
-    category: "Applied project",
-    role: "AR Application Developer",
-    summary:
-      "A mobile AR navigation app that uses a measured 3D environment, Unity NavMesh, and QR recentering to keep guidance aligned with the real building.",
-    cardSummary:
-      "A Unity AR project where I owned the app implementation, to-scale building model, NavMesh navigation, and QR recentering.",
-    cardMedia: {
-      type: "video",
-      src: "docs/assets/ARNavigationPage/Ar Navigation Demo.mp4",
-      label: "AR Navigation Guide mobile demo",
-    },
-    detailMedia: {
-      type: "youtube",
-      src: "https://www.youtube.com/embed/WZ6WqVDH8V8?si=fs14G9H3jmrUMoRs",
-      label: "AR Navigation Guide demo video",
-    },
-    links: [],
-    facts: [
-      { label: "Team", value: "6 students" },
-      { label: "Duration", value: "3 months" },
-      { label: "Result", value: "84/100" },
-    ],
-    tools: ["Unity", "C#", "Mobile AR", "NavMesh", "ZXing.Net", "QR codes"],
-    sections: [
-      {
-        title: "What I owned",
-        type: "bullets",
-        items: [
-          "Owned the AR application implementation while teammates focused on supporting deliverables.",
-          "Built a to-scale 3D campus environment from blueprints and in-person measurements.",
-          "Implemented QR code recentering with ZXing.Net to recover from tracking drift.",
-          "Connected real-world layout data to Unity navigation so the route line could update while the user moved.",
-        ],
-      },
-      {
-        title: "What I built",
-        body: [
-          "The app helps students and visitors navigate unfamiliar university buildings through mobile augmented reality. My main responsibility was creating the actual AR application and the environment it navigated through.",
-          "I rebuilt the target building in Unity using blueprints plus in-person measurements for doors, corridors, and key spaces. That gave the NavMesh a usable, real-world scale foundation.",
-        ],
-      },
-      {
-        title: "Technical decisions",
-        body: [
-          "The hardest problem was keeping the phone aligned with the real building. Older devices and dim lighting caused tracking drift, so I tested recovery options and chose QR codes because they were cheap, clear for users, and easy to place around the building.",
-          "When a QR code is scanned, the app recenters the navigation position and orientation so the route can recover without restarting the experience.",
-        ],
-      },
-      {
-        title: "What I learned",
-        body: [
-          "This project taught me a lot about the practical side of AR: the technical feature is only useful if it survives imperfect lighting, imperfect devices, and real users moving through a space.",
-        ],
-      },
-    ],
+  slug: "ar-navigation-guide",
+  title: "AR Navigation Guide",
+  subtitle: "Mobile Campus Navigation",
+  category: "AR Project",
+  role: "AR Application Developer",
+
+  summary:
+    "A mobile AR navigation app that uses a to-scale 3D model, Unity NavMesh, and QR recentering to guide users through a real university building.",
+
+  cardSummary:
+    "A Unity AR navigation app built around a measured, to-scale campus environment. I took complete responsibility for the application, NavMesh routing, and QR-based recentering.",
+
+  cardMedia: {
+    type: "video",
+    src: "docs/assets/ARNavigationPage/Ar Navigation Demo.mp4",
+    label: "AR Navigation Guide mobile demo",
   },
+
+  detailMedia: {
+    type: "youtube",
+    src: "https://www.youtube.com/embed/WZ6WqVDH8V8?si=fs14G9H3jmrUMoRs",
+    label: "AR Navigation Guide demo video",
+  },
+
+  links: [],
+
+  facts: [
+    { label: "Team", value: "6 students" },
+    { label: "Duration", value: "3 months" },
+    { label: "Outcome", value: "Working mobile AR prototype" },
+  ],
+
+  tools: [
+    "Unity",
+    "C#",
+    "Android",
+    "Mobile AR",
+    "NavMesh",
+    "ZXing.Net",
+  ],
+
+  sections: [
+    {
+      title: "Overview",
+      body: [
+        "The AR Navigation Guide was designed to help students and visitors find their way around an unfamiliar university building. It displays a route through the phone camera, allowing the user to follow directions while still seeing the space around them.",
+        "I took complete responsibility for building the application and the virtual environment. This included recreating the building at real-world scale, setting up the navigation system, and finding a practical way to recover when the tracking drifted.",
+      ],
+    },
+    {
+      title: "What I Built",
+      type: "bullets",
+      items: [
+        "Built the mobile AR application and its navigation system in Unity.",
+        "Recreated the target building at real-world scale using blueprints and measurements taken on site.",
+        "Used Unity NavMesh to calculate routes through corridors, doors, and key spaces.",
+        "Updated the displayed route as the user moved through the building.",
+        "Implemented QR-based recentering with ZXing.Net to correct tracking position and orientation.",
+      ],
+    },
+    {
+      title: "Tracking and Recentering",
+      body: [
+        "The hardest part was keeping the virtual route aligned with the real building. Tracking became less reliable on older phones and in dimly lit areas, causing the user's location to gradually move away from its actual position.",
+        "I tested different ways of recovering from that drift and chose QR codes because they were inexpensive, easy to place around the building, and gave users a clear point to scan. When the app recognises a code, it uses the known location and orientation of that marker to recenter the user's location without requiring a restart.",
+      ],
+    },
+    {
+      title: "Building the Environment",
+      body: [
+        "The virtual building needed to line up closely with the real one for the navigation to be useful. I started from the available blueprints, then measured corridors, doors, and important spaces in person to fix any incorrect or missing dimensions.",
+        "That model became the foundation for the NavMesh and route system. Small differences in scale or positioning could become noticeable once the route was viewed through the phone, so getting the environment right was very important for a smooth user experience.",
+      ],
+    },
+    {
+      title: "What I Learned",
+      body: [
+        "This project showed me that an AR feature can work well in a controlled test and still struggle in the environment where people actually use it. Lighting, device quality, tracking drift, and the accuracy of the physical space all affected the experience.",
+        "I also became comfortable with Unity’s Android build pipeline, including configuring mobile builds and deploying them to physical devices.",
+      ],
+    },
+  ],
+},
 ];
 
 export function findProject(slug) {

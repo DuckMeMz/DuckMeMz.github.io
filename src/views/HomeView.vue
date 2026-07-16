@@ -55,7 +55,15 @@
         <p>{{ group.description }}</p>
       </div>
 
-      <div :class="['project-grid', { 'project-grid-featured': group.slugs.length === 1 }]">
+      <div
+        :class="[
+          'project-grid',
+          {
+            'project-grid-featured': group.slugs.length === 1,
+            'project-grid-two-column': group.id === 'selected-projects',
+          },
+        ]"
+      >
         <ProjectCard
           v-for="project in projectsForGroup(group)"
           :key="project.slug"

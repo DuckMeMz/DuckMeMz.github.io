@@ -322,6 +322,10 @@ button {
   grid-template-columns: minmax(0, 45rem);
 }
 
+.project-grid-two-column {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .project-card {
   height: 100%;
   display: flex;
@@ -678,6 +682,9 @@ button {
 }
 
 @media (max-width: 760px) {
+  .project-grid-two-column {
+    grid-template-columns: 1fr;
+  }
   .shell {
     width: min(100% - 1.25rem, 1120px);
   }
