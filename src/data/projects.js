@@ -542,7 +542,7 @@ export const projects = [
 
   cardMedia: {
     type: "video",
-    src: "docs/assets/ARNavigationPage/Ar Navigation Demo.mp4",
+    src: "docs/assets/ARNavigationPage/AR Navigation Demo.mp4",
     label: "AR Navigation Guide mobile demo",
   },
 
