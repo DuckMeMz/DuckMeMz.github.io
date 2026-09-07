@@ -30,7 +30,7 @@ export const projects = [
       "Built a tank-style enemy for the shipped Unreal Engine title Samsara, turning a design brief into a playable combat feature. The work led to paid freelance programming on the project.",
     cardMedia: {
       type: "video",
-      src: "docs/assets/Samsara/Tiryag Fight Thumbnail.mp4",
+      src: "docs/assets/Samsara/Tiryag Fight Thumbnail.web.mp4",
       poster: "docs/assets/posters/samsara.jpg",
       label: "Samsara Tiryag Charger gameplay clip",
     },
